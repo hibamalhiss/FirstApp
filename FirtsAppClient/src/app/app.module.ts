@@ -8,6 +8,7 @@ import { AuthenticationService } from '../services/Authentication.service';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from '../Home/Home.component';
 import { RegisterComponent } from '../Register/Register.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
    declarations: [
@@ -19,7 +20,8 @@ import { RegisterComponent } from '../Register/Register.component';
    imports: [
       BrowserModule,
       HttpClientModule,
-      FormsModule
+      FormsModule,
+      BsDropdownModule.forRoot()
    ],
    providers: [
       AuthenticationService
