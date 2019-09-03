@@ -23,8 +23,10 @@ export class RegisterComponent implements OnInit {
   register() {
     this.auth.register(this.user).subscribe((result) => {
       console.log("registerd successfully");
+      alert("registerd successfully");
    }, ( error) => {
      console.log("register error");
+     alert("register error");
 
    });
   }

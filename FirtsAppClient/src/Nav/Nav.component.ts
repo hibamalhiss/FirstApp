@@ -11,7 +11,7 @@ export class NavComponent implements OnInit {
     username: '',
     password: ''
   };
-  constructor(private auth: AuthenticationService) { }
+  constructor(public auth: AuthenticationService) { }
 
   ngOnInit() {
   }
@@ -20,10 +20,20 @@ export class NavComponent implements OnInit {
     console.log(this.user);
     this.auth.logIn(this.user).subscribe((result) => {
       console.log("logedIn successfully");
+      alert("logedIn successfully");
    }, ( error) => {
      console.log("logIn error");
+     alert("logIn error");
 
    });
+  }
+
+  logOut(){
+    this.auth.logOut();
+  }
+
+  isLoggedIn(){
+    return this.auth.isLoggedIn();
   }
 
 }

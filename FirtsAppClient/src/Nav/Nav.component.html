@@ -11,10 +11,25 @@
         <a class="nav-link" href="#">Lists</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" >messages</a>
+        <a class="nav-link " href="#" >messages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " (click)="logOut()" >logout</a>
       </li>
     </ul>
-    <form #logInForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="logIn()">
+
+    <div class="dropdown" *ngIf="isLoggedIn()">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" >
+        Welcome  {{this.auth.decodedToken.unique_name}}
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+
+    <form #logInForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="logIn()" *ngIf="!isLoggedIn()">
       <input class="form-control mr-sm-2" type="text" placeholder="email" name="email" [(ngModel)]="user.username" required>
       <input class="form-control mr-sm-2" type="password" placeholder="password" name="password" [(ngModel)]="user.password" required>
       <button class="btn btn-outline-success my-2 my-sm-0" [disabled]="!logInForm.valid" type="submit" >LogIn</button>
