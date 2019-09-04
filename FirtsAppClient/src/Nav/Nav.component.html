@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Matche App</a>
+  <a class="navbar-brand" [routerLink]="['/']">Matche App</a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent" >
     <ul class="navbar-nav mr-auto" *ngIf="isLoggedIn()">
 
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Matches <span class="sr-only">(current)</span></a>
+      <li class="nav-item ">
+        <a class="nav-link" [routerLink]="['/matches']"  >Matches <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Lists</a>
+        <a class="nav-link" [routerLink]="['/lists']">Lists</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="#" >messages</a>
+        <a class="nav-link " [routerLink]="['/messages']">messages</a>
       </li>
     </ul>
 
@@ -20,7 +20,7 @@
         Welcome  {{this.auth.decodedToken.unique_name}}
       </button>
       <div *dropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton"  >
-        <a class="dropdown-item" href="#"><i class="fa fa-user mr-2"></i>Edit Profile </a>
+        <a class="dropdown-item" ><i class="fa fa-user mr-2"></i>Edit Profile </a>
         <button class="dropdown-item" (click)="logOut()"><i class="fa fa-sign-out mr-2 "></i>Log Out</button>
       </div>
     </div>
