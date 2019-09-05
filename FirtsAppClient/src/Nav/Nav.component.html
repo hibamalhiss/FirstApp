@@ -25,8 +25,7 @@
       </div>
     </div>
 
-    <form #logInForm="ngForm" class="form-inline  ml
-    -auto my-lg-0 " (ngSubmit)="logIn()" *ngIf="!isLoggedIn()">
+    <form #logInForm="ngForm" class="form-inline  ml-auto my-lg-0 " (ngSubmit)="logIn()" *ngIf="!isLoggedIn()">
       <input class="form-control mr-sm-2" type="text" placeholder="email" name="email" [(ngModel)]="user.username" required>
       <input class="form-control mr-sm-2" type="password" placeholder="password" name="password" [(ngModel)]="user.password" required>
       <button class="btn btn-outline-success my-2 my-sm-0" [disabled]="!logInForm.valid" type="submit" >LogIn</button>
